@@ -32,6 +32,9 @@
             this.btnCargar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.tbFiltro = new System.Windows.Forms.TextBox();
+            this.txtBuscar = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.btnBuscar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid)).BeginInit();
             this.SuspendLayout();
             // 
@@ -45,7 +48,7 @@
             // 
             // btnCargar
             // 
-            this.btnCargar.Location = new System.Drawing.Point(713, 415);
+            this.btnCargar.Location = new System.Drawing.Point(68, 415);
             this.btnCargar.Name = "btnCargar";
             this.btnCargar.Size = new System.Drawing.Size(75, 23);
             this.btnCargar.TabIndex = 1;
@@ -70,11 +73,40 @@
             this.tbFiltro.TabIndex = 3;
             this.tbFiltro.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
+            // txtBuscar
+            // 
+            this.txtBuscar.Location = new System.Drawing.Point(883, 41);
+            this.txtBuscar.Name = "txtBuscar";
+            this.txtBuscar.Size = new System.Drawing.Size(100, 20);
+            this.txtBuscar.TabIndex = 5;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(792, 44);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(70, 13);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "Customers ID";
+            // 
+            // btnBuscar
+            // 
+            this.btnBuscar.Location = new System.Drawing.Point(845, 84);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(112, 23);
+            this.btnBuscar.TabIndex = 6;
+            this.btnBuscar.Text = "Buscar Cliente";
+            this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1014, 450);
+            this.Controls.Add(this.btnBuscar);
+            this.Controls.Add(this.txtBuscar);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.tbFiltro);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnCargar);
@@ -94,6 +126,9 @@
         private System.Windows.Forms.Button btnCargar;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox tbFiltro;
+        private System.Windows.Forms.TextBox txtBuscar;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btnBuscar;
     }
 }
 
