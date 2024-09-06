@@ -42,6 +42,13 @@ namespace DatosLayer
             }
         }
 
+        public List<Customers> Filtrar(string CompanyName)
+        {
+            var datos = ObtenerTodos();
+            var filtro = datos.FindAll(x => x.CompanyName.ToUpper().StartsWith(CompanyName.ToUpper()));
+            return filtro;
+        }
+
         public Customers ObtenerPorID(string id)
         {
 
@@ -153,6 +160,22 @@ namespace DatosLayer
             comando.Parameters.AddWithValue("City", customer.City);
             var insertados = comando.ExecuteNonQuery();
             return insertados;
+        }
+
+        public int EliminarCliente(string id)
+        {
+            using (var conexion = DataBase.GetSqlConnection())
+            {
+                String EliminarCliente = "";
+                EliminarCliente = EliminarCliente + "DELETE FROM [dbo].[Customers] " + "\n";
+                EliminarCliente = EliminarCliente + "      WHERE CustomerID = @CustomerID";
+                using (SqlCommand comando = new SqlCommand(EliminarCliente, conexion))
+                {
+                    comando.Parameters.AddWithValue("@CustomerID", id);
+                    int elimindos = comando.ExecuteNonQuery();
+                    return elimindos;
+                }
+            }
         }
     }
 }

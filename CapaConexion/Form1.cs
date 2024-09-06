@@ -29,13 +29,6 @@ namespace CapaConexion
             dataGrid.DataSource = Customers;
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-            //var filtro = Customers.FindAll(X => X.CompanyName.StartsWith(tbFiltro.Text));
-            //dataGrid.DataSource = filtro;
-
-        }
-
         private void Form1_Load(object sender, EventArgs e)
         {
            /* 
@@ -56,7 +49,6 @@ namespace CapaConexion
             tboxContactTitle.Text = cliente.ContactTitle;
             tboxAddress.Text = cliente.Address;
             tboxCity.Text = cliente.City;
-
         }
 
         private void btnInsertar_Click(object sender, EventArgs e)
@@ -165,7 +157,21 @@ namespace CapaConexion
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
+            int elimindas = customerRepository.EliminarCliente(tboxCustomerID.Text);
+            MessageBox.Show("Filas eliminadas = " + elimindas);
+        }
 
+        private void tbFiltro_TextChanged(object sender, EventArgs e)
+        {
+            string CompanyName = tbFiltro.Text;
+            if(CompanyName != "")
+            {
+                dataGrid.DataSource = customerRepository.Filtrar(CompanyName);
+            }
+            else
+            {
+                dataGrid.DataSource = customerRepository.ObtenerTodos();
+            }
         }
     }
 }

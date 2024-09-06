@@ -86,7 +86,7 @@
             this.tbFiltro.Name = "tbFiltro";
             this.tbFiltro.Size = new System.Drawing.Size(100, 20);
             this.tbFiltro.TabIndex = 3;
-            this.tbFiltro.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.tbFiltro.TextChanged += new System.EventHandler(this.tbFiltro_TextChanged);
             // 
             // txtBuscar
             // 
